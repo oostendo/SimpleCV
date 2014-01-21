@@ -48,7 +48,7 @@ class DrawingLayer:
 
         self.width = width
         self.height = height
-        self._mSurface = pg.Surface((width, height), flags = pg.SRCALPHA)
+        self._mSurface = pg.Surface((width, height), flags = pg.SRCALPHA, depth = 32)
         self._mDefaultAlpha = 255
         self._mClearColor = pg.Color(0, 0, 0, 0)
 
@@ -625,7 +625,7 @@ class DrawingLayer:
         This method removes all of the drawing on this layer (i.e. the layer is
         erased completely)
         """
-        self._mSurface = pg.Surface((int(self.width), int(self.height)),flags = pg.SRCALPHA)
+        self._mSurface = pg.Surface((int(self.width), int(self.height)),flags = pg.SRCALPHA, depth = 32)
         return None
 
     def renderToSurface(self, surf):
